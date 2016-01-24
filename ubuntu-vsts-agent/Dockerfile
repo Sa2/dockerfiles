@@ -12,10 +12,12 @@ RUN sudo apt-get -qy update && apt-get -fqy dist-upgrade
 RUN mkdir /var/run/sshd
 RUN sudo apt-get autoremove && apt-get clean
 
+RUN sudo apt-get install -y openssh-server
+RUN sudo apt-get install -y openssh-client
 RUN sudo apt-get install -y wget
 RUN sudo apt-get install -y git
 RUN sudo apt-get install -y node
 
 RUN echo "root:root" | chpasswd
 EXPOSE 22
-RUN sudo /usr/sbin/sshd -D
+ENTRYPOINT [ "/usr/sbin/sshd", "-D" ]
