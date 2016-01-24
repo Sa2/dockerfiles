@@ -18,4 +18,4 @@ RUN sudo apt-get install -y node
 
 RUN echo "root:root" | chpasswd
 EXPOSE 22
-ENTRYPOINT [ "/usr/sbin/sshd", "-D" ]
+RUN sudo /usr/sbin/sshd -D
