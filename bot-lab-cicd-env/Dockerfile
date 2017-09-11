@@ -18,7 +18,9 @@ RUN wget -q https://www.ubuntulinux.jp/ubuntu-jp-ppa-keyring.gpg -O- | sudo apt-
 RUN sudo wget https://www.ubuntulinux.jp/sources.list.d/zesty.list -O /etc/apt/sources.list.d/ubuntu-ja.list
 RUN sudo apt-get update
 RUN sudo apt-get install -y language-pack-ja
-RUN locale-gen ja_JP.UTF-8  
-ENV LANG ja_JP.UTF-8  
-ENV LANGUAGE ja_JP:ja
-ENV LC_ALL ja_JP.UTF-8
+RUN sudo locale-gen ja_JP.UTF-8  
+ENV sudo LANG ja_JP.UTF-8  
+ENV sudo LANGUAGE ja_JP:ja
+ENV sudo LC_ALL ja_JP.UTF-8
+
+# 
